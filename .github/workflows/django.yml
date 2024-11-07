@@ -23,7 +23,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H femecogvirtual.com >> ~/.ssh/known_hosts
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - name: Deploy to Server
         run: |
           ssh -i ~/.ssh/id_rsa django@femecogvirtual.com  << 'EOF'
